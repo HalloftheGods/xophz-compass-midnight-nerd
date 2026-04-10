@@ -22,7 +22,7 @@ Use this 24/7 support ticketing system to request support from the author direct
 1. Ensure **Xophz COMPASS** is installed and active.
 2. Upload `xophz-compass-midnight-nerd` to `/wp-content/plugins/`.
 3. Activate through the Plugins menu.
-4. Access via the COMPASS dashboard → **Midnight Nerd**.
+4. Access via the My Compass dashboard → **Midnight Nerd**.
 
 ## Frontend Routes
 
