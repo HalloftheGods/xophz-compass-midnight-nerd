@@ -78,7 +78,16 @@ class Xophz_Compass_Midnight_Nerd {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_midnight_nerd_hooks();
 
+	}
+
+	private function define_midnight_nerd_hooks() {
+		$plugin_cpt = new Xophz_Compass_Midnight_Nerd_CPT();
+		$this->loader->add_action( 'init', $plugin_cpt, 'register_cpt' );
+
+		$plugin_api = new Xophz_Compass_Midnight_Nerd_API();
+		$this->loader->add_action( 'rest_api_init', $plugin_api, 'register_routes' );
 	}
 
 	/**
@@ -121,6 +130,9 @@ class Xophz_Compass_Midnight_Nerd {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-xophz-compass-midnight-nerd-public.php';
+
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-xophz-compass-midnight-nerd-cpt.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-xophz-compass-midnight-nerd-api.php';
 
 		$this->loader = new Xophz_Compass_Midnight_Nerd_Loader();
 
