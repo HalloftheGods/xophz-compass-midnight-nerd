@@ -14,7 +14,7 @@
  * Category:          Wizard's Tower
  *
  * @wordpress-plugin
- * Plugin Name:       Xophz Midnight Knerd
+ * Plugin Name:       Xophz Midnight Nerd
  * Plugin URI:        https://github.com/HalloftheGods/xophz-compass-midnight-nerd
  * Description:       Use this 24/7 support ticketing system to request support to the author, X, directly 
  * Version:           26.4.27.865

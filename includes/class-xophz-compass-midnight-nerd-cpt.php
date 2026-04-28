@@ -24,8 +24,8 @@ class Xophz_Compass_Midnight_Nerd_CPT {
 			'description'        => __( 'Midnight Nerd Support Tickets.', 'xophz-compass-midnight-nerd' ),
 			'public'             => false,
 			'publicly_queryable' => false,
-			'show_ui'            => true,
-			'show_in_menu'       => 'xophz-compass', // Attach to COMPASS admin menu
+			'show_ui'            => false,
+			'show_in_menu'       => false,
 			'query_var'          => false,
 			'rewrite'            => false,
 			'capability_type'    => 'post',

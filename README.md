@@ -1,4 +1,4 @@
-# Xophz Midnight Knerd
+# Xophz Midnight Nerd
 
 > **Category:** Wizard's Tower · **Version:** 0.0.1
 
@@ -6,7 +6,7 @@ Use this 24/7 support ticketing system to request support from the author direct
 
 ## Description
 
-**Midnight Knerd** is a planned support and ticketing application for the COMPASS platform. It is designed to provide direct communication channels between site administrators and the development/support team. 
+**Midnight Nerd** is a planned support and ticketing application for the COMPASS platform. It is designed to provide direct communication channels between site administrators and the development/support team. 
 
 ## Requirements
 
