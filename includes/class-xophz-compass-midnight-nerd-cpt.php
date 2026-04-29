@@ -37,5 +37,23 @@ class Xophz_Compass_Midnight_Nerd_CPT {
 		);
 
 		register_post_type( 'midnight_ticket', $args );
+
+		register_post_meta( 'midnight_ticket', '_mn_status', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
+
+		register_post_meta( 'midnight_ticket', '_mn_urgency', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
+
+		register_post_meta( 'midnight_ticket', '_mn_system_data', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
 	}
 }
