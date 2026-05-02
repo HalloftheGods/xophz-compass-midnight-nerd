@@ -12,6 +12,7 @@
  * @since             1.0.0
  * @package           Xophz_Compass_
  * Category:          Wizard's Tower
+ * Group:             ITSM
  *
  * @wordpress-plugin
  * Plugin Name:       Xophz Midnight Nerd
