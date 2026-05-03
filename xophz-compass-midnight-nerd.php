@@ -18,7 +18,7 @@
  * Plugin Name:       Xophz Midnight Nerd
  * Plugin URI:        https://github.com/HalloftheGods/xophz-compass-midnight-nerd
  * Description:       Use this 24/7 support ticketing system to request support to the author, X, directly 
- * Version:           26.5.2.703
+ * Version:           26.5.3
  * Author:            Hall of the Gods, Inc.
  * Author URI:        http://www.hallofthegods.com/
  * License:           GPL-2.0+
@@ -38,7 +38,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'XOPHZ_COMPASS_MIDNIGHT_NERD_VERSION', '26.5.2.703' );
+define( 'XOPHZ_COMPASS_MIDNIGHT_NERD_VERSION', '26.5.3' );
 
 /**
  * The code that runs during plugin activation.
