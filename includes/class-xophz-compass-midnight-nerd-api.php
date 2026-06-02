@@ -11,8 +11,8 @@ class Xophz_Compass_Midnight_Nerd_API {
 	}
 
 	public function check_permission() {
-		// Basic auth check for logged-in users. We can tighten this based on roles later.
-		return current_user_can( 'read' ); 
+		// Publicly accessible so anyone (including guests) can submit a ticket.
+		return true; 
 	}
 
 	public function submit_ticket( WP_REST_Request $request ) {
