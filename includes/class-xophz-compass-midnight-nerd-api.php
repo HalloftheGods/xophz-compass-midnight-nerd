@@ -82,14 +82,22 @@ class Xophz_Compass_Midnight_Nerd_API {
 		$youmeos_endpoint = 'https://api.youmeos.com/v1/telemetry/ticket-logged';
 		wp_remote_post( $youmeos_endpoint, $request_args );
 
-		// 3. (Optional) Direct Email Notification
-		// We could use wp_mail() here to immediately email the DP if it's a 'CRITICAL' urgency.
+		// 3. Direct Email Notification
 		$urgency = sanitize_text_field( $params['ticket']['urgency'] ?? 'Normal' );
-		if ( strpos( strtoupper($urgency), 'CRITICAL' ) !== false ) {
-			$admin_email = get_option( 'admin_email' );
-			$subject = "CRITICAL Midnight Nerd Ticket from " . site_url();
-			$message = "A critical ticket was just submitted.\n\nSubject: " . $params['ticket']['subject'];
-			wp_mail( $admin_email, $subject, $message );
+		$admin_email = get_option( 'admin_email' );
+		$subject = "Midnight Nerd Ticket: " . sanitize_text_field( $params['ticket']['subject'] ?? 'Untitled' ) . " [" . site_url() . "]";
+		
+		$message_body = "A new Midnight Nerd ticket was just submitted from " . site_url() . ".\n\n";
+		$message_body .= "Urgency: " . $urgency . "\n";
+		$message_body .= "User: " . sanitize_text_field( $params['user'] ?? 'Unknown' ) . "\n\n";
+		$message_body .= "Message:\n" . sanitize_textarea_field( $params['ticket']['message'] ?? '' ) . "\n\n";
+		
+		if ( ! empty( $params['ticket']['includeLogs'] ) ) {
+			$message_body .= "System Info:\n";
+			$message_body .= "WP Version: " . sanitize_text_field( $params['wp_version'] ?? 'Unknown' ) . "\n";
+			$message_body .= "Active Plugins: " . implode( ', ', array_map( 'sanitize_text_field', $params['active_plugins'] ?? array() ) ) . "\n";
 		}
+
+		wp_mail( $admin_email, $subject, $message_body );
 	}
 }
