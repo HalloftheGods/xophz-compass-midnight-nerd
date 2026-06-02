@@ -24,8 +24,8 @@ class Xophz_Compass_Midnight_Nerd_CPT {
 			'description'        => __( 'Midnight Nerd Support Tickets.', 'xophz-compass-midnight-nerd' ),
 			'public'             => false,
 			'publicly_queryable' => false,
-			'show_ui'            => false,
-			'show_in_menu'       => false,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
 			'query_var'          => false,
 			'rewrite'            => false,
 			'capability_type'    => 'post',
@@ -45,6 +45,12 @@ class Xophz_Compass_Midnight_Nerd_CPT {
 		) );
 
 		register_post_meta( 'midnight_ticket', '_mn_urgency', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
+
+		register_post_meta( 'midnight_ticket', '_mn_contact', array(
 			'show_in_rest' => true,
 			'single'       => true,
 			'type'         => 'string',
