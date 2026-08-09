@@ -36,8 +36,17 @@ class Xophz_Compass_Midnight_Nerd_API {
 		}
 
 		// Save meta data for tracking
+		$email = sanitize_email( $ticket_data['email'] ?? '' );
+		$phone = sanitize_text_field( $ticket_data['phone'] ?? '' );
+		$contact = sanitize_text_field( $ticket_data['contact'] ?? '' );
+		if ( empty( $contact ) ) {
+			$contact = implode( ' | ', array_filter( array( $email, $phone ) ) );
+		}
+
 		update_post_meta( $post_id, '_mn_urgency', $urgency );
-		update_post_meta( $post_id, '_mn_contact', sanitize_text_field( $ticket_data['contact'] ?? '' ) );
+		update_post_meta( $post_id, '_mn_email', $email );
+		update_post_meta( $post_id, '_mn_phone', $phone );
+		update_post_meta( $post_id, '_mn_contact', $contact );
 		update_post_meta( $post_id, '_mn_system_data', json_encode(array(
 			'wp_version' => $params['wp_version'] ?? '',
 			'php_version' => $params['php_version'] ?? '',
@@ -91,11 +100,16 @@ class Xophz_Compass_Midnight_Nerd_API {
 		$message_body = "A new Midnight Nerd ticket was just submitted from " . site_url() . ".\n\n";
 		$message_body .= "Urgency: " . $urgency . "\n";
 		$message_body .= "User: " . sanitize_text_field( $params['user'] ?? 'Unknown' ) . "\n";
-		if ( ! empty( $params['ticket']['contact'] ) ) {
-			$message_body .= "Contact: " . sanitize_text_field( $params['ticket']['contact'] ) . "\n\n";
-		} else {
-			$message_body .= "\n";
+		if ( ! empty( $params['ticket']['email'] ) ) {
+			$message_body .= "Email: " . sanitize_email( $params['ticket']['email'] ) . "\n";
 		}
+		if ( ! empty( $params['ticket']['phone'] ) ) {
+			$message_body .= "Phone: " . sanitize_text_field( $params['ticket']['phone'] ) . "\n";
+		}
+		if ( ! empty( $params['ticket']['contact'] ) && empty( $params['ticket']['email'] ) && empty( $params['ticket']['phone'] ) ) {
+			$message_body .= "Contact: " . sanitize_text_field( $params['ticket']['contact'] ) . "\n";
+		}
+		$message_body .= "\n";
 		$message_body .= "Message:\n" . sanitize_textarea_field( $params['ticket']['message'] ?? '' ) . "\n\n";
 		
 		if ( ! empty( $params['ticket']['includeLogs'] ) ) {

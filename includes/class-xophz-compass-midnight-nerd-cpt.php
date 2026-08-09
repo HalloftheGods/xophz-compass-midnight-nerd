@@ -50,6 +50,18 @@ class Xophz_Compass_Midnight_Nerd_CPT {
 			'type'         => 'string',
 		) );
 
+		register_post_meta( 'midnight_ticket', '_mn_email', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
+
+		register_post_meta( 'midnight_ticket', '_mn_phone', array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		) );
+
 		register_post_meta( 'midnight_ticket', '_mn_contact', array(
 			'show_in_rest' => true,
 			'single'       => true,
