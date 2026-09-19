@@ -16,7 +16,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Xophz Midnight Nerd
- * Plugin URI:        https://github.com/HalloftheGods/xophz-compass-midnight-nerd
+ * Plugin URI:        https://www.youmeos.com/u/?sparks=midnight-nerd&fullspark=true&name=Midnight+Nerd&icon=fal+fa-dice-d20&color=%238d105e
  * Description:       Use this 24/7 support ticketing system to request support to the author, X, directly 
  * Version:           26.9.5
  * Author:            Hall of the Gods, Inc.
