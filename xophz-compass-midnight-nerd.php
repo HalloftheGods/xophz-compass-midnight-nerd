@@ -19,8 +19,8 @@
  * Plugin URI:        https://www.youmeos.com/u/?sparks=midnight-nerd&fullspark=true&name=Midnight+Nerd&icon=fal+fa-dice-d20&color=%238d105e
  * Description:       Use this 24/7 support ticketing system to request support to the author, X, directly 
  * Version:           26.9.20
- * Author:            Hall of the Gods, Inc.
- * Author URI:        http://www.hallofthegods.com/
+ * Author:            My Compass Consulting
+ * Author URI:        https://mycompassconsulting.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       xophz-compass-midnight-nerd
